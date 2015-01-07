@@ -2,16 +2,20 @@ package com.Fiskmans.modtest;
 
 
 /* Created by manszivkovicandersen on 2015-01-06.*/
-import com.Fiskmans.modtest.configuration.configurationhandeler;
+
+import com.Fiskmans.modtest.handler.configurationhandler;
+import com.Fiskmans.modtest.init.Moditems;
 import com.Fiskmans.modtest.proxy.iProxy;
 import com.Fiskmans.modtest.reference.Reference;
+import com.Fiskmans.modtest.utility.loghelper;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.Mod_id,name = Reference.Mod_name,version = Reference.Mod_version)
+@Mod(modid = Reference.Mod_id,name = Reference.Mod_name,version = Reference.Mod_version,guiFactory = Reference.Mod_guiFactoryClass)
 public class modtest
 {
 
@@ -26,20 +30,25 @@ public class modtest
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event)
     {
-        configurationhandeler.init(event.getSuggestedConfigurationFile());
+        configurationhandler.init(event.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new configurationhandler());
+
+
+        Moditems.init();
+        loghelper.info("preinit completed");
     }
 
 
     @Mod.EventHandler
-    public void durinit(FMLInitializationEvent event)
+    public void init(FMLInitializationEvent event)
     {
-
+        loghelper.info("init completed");
     }
 
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event)
     {
-
+        loghelper.info("postinit completed");
     }
 
 
