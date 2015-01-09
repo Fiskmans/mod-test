@@ -1,7 +1,7 @@
 package com.Fiskmans.modtest.init;
 
 import com.Fiskmans.modtest.item.itemMT;
-import com.Fiskmans.modtest.item.itemsomethingfun;
+import com.Fiskmans.modtest.item.Shadowblade;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
@@ -9,10 +9,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
  */
 public class Moditems
 {
-    public static final itemMT somethingfun = new itemsomethingfun();
+    public static final itemMT Shadowblade = new Shadowblade();
 
     public static void init()
     {
-        GameRegistry.registerItem(somethingfun,"somethingfun");
+        GameRegistry.registerItem(Shadowblade,"Shadowblade");
     }
 }

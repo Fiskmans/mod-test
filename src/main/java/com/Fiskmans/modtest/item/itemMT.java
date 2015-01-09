@@ -1,14 +1,32 @@
 package com.Fiskmans.modtest.item;
 
+import com.Fiskmans.modtest.reference.Reference;
 import net.minecraft.item.Item;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.ItemStack;
 
-/**
- * Created by manszivkovicandersen on 2015-01-07.
- */
+
 public class itemMT extends Item
 {
-    public itemMT()
+    public itemMT(){super();}
+    
+    @Override
+    public String getUnlocalizedName()
     {
-        super();
+        return String.format("item.%s%s", Reference.Mod_id.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
+
+    @Override
+     public String getUnlocalizedName(ItemStack itemStack)
+    {
+        return String.format("item.%s%s", Reference.Mod_id.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    }
+
+    protected String getUnwrappedUnlocalizedName(String unlocalizedName)
+    {
+        return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+    }
+
 }
