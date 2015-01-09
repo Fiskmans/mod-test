@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 public class itemMT extends Item
 {
     public itemMT(){super();}
-    
+
     @Override
     public String getUnlocalizedName()
     {
@@ -22,6 +22,13 @@ public class itemMT extends Item
      public String getUnlocalizedName(ItemStack itemStack)
     {
         return String.format("item.%s%s", Reference.Mod_id.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IIconRegister iconRegister)
+    {
+    itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)
