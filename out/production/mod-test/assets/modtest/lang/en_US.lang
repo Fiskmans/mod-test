@@ -1,1 +1,5 @@
 item.modtest:ShadowBlade.name=Shadow Blade
+tile.modtest:Socket.name=Socket Block
+tile.modtest:SocketEXT.name=Socket Extention
+tile.modtest:Tileable.name=Tile Able
+tile.modtest:Greencrystal.name=Green Crystal

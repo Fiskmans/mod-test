@@ -4,6 +4,7 @@ package com.Fiskmans.modtest;
 /* Created by manszivkovicandersen on 2015-01-06.*/
 
 import com.Fiskmans.modtest.handler.configurationhandler;
+import com.Fiskmans.modtest.init.ModBlocks;
 import com.Fiskmans.modtest.init.Moditems;
 import com.Fiskmans.modtest.proxy.iProxy;
 import com.Fiskmans.modtest.reference.Reference;
@@ -35,6 +36,8 @@ public class modtest
 
 
         Moditems.init();
+
+        ModBlocks.init();
         loghelper.info("preinit completed");
     }
 

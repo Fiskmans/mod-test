@@ -9,5 +9,7 @@ public class ShadowBlade extends itemMT
     {
         super();
         this.setUnlocalizedName("ShadowBlade");
+        this.setMaxDamage(700);
+        this.setMaxStackSize(1);
     }
 }

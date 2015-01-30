@@ -1,5 +1,6 @@
 package com.Fiskmans.modtest.item;
 
+import com.Fiskmans.modtest.CreativTabs.CreativeTabMT;
 import com.Fiskmans.modtest.reference.Reference;
 import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
@@ -10,7 +11,11 @@ import net.minecraft.item.ItemStack;
 
 public class itemMT extends Item
 {
-    public itemMT(){super();}
+    public itemMT()
+    {
+        super();
+        this.setCreativeTab(CreativeTabMT.MT_TAB);
+    }
 
     @Override
     public String getUnlocalizedName()
